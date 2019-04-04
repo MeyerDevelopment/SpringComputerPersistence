@@ -1,0 +1,48 @@
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta charset="UTF-8">
+<title>Update Computer</title>
+</head>
+<body>
+<form action="#" th:action="@{/update/{id}(id=${computers.id})}"
+th:object="${computers}" method="post">
+ <label for="name">Name</label>
+ <input type="text" th:field="*{name}" id="name"
+placeholder="Name">
+ <span th:if="${#fields.hasErrors('name')}"
+th:errors="*{name}"></span>
+
+ <label for="inventoryID">Inventory ID</label>
+ <input type="text" th:field="*{inventoryID}" id="inventoryID"
+placeholder="Inventory ID">
+ <span th:if="${#fields.hasErrors('inventoryID')}"
+th:errors="*{inventoryID}"></span>
+
+ <label for="employee.firstName">Employee First Name</label>
+ <input type="text" th:field="*{employee.firstName}" id="employee.firstName"
+placeholder="First Name">
+ <span th:if="${#fields.hasErrors('employee.firstName')}"
+th:errors="*{employee.firstName}"></span>
+
+ <label for="employee.lastName">Employee Last Name</label>
+ <input type="text" th:field="*{employee.lastName}"
+id="employee.lastName" placeholder="Employee Last Name">
+ <span th:if="${#fields.hasErrors('employee.lastName')}"
+th:errors="*{employee.lastName}"></span>
+
+ <label for="numOfCores">Number of Cores</label>
+ <input type="text" th:field="*{numOfCores}" id="numOfCores"
+placeholder="Number of Cores">
+ <span th:if="${#fields.hasErrors('numOfCores')}"
+th:errors="*{numOfCores}"></span>
+
+ <label for="memory">Memory in GBs</label>
+ <input type="text" th:field="*{memory}" id="memory"
+placeholder="Memory in GBs">
+ <span th:if="${#fields.hasErrors('memory')}"
+th:errors="*{memory}"></span>
+
+ <input type="submit" value="Update Computer">
+</form>
+</body>
+</html>

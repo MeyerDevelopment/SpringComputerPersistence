@@ -1,0 +1,26 @@
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta charset="UTF-8">
+<title>View All Contacts</title>
+</head>
+<body>
+<form>
+<table>
+<tr th:each="currentComputer : ${computers}" >
+<td th:text="${currentComputer.id}" />
+ <td th:text="${currentComputer.name}" />
+ <td th:text="${currentComputer.inventoryID}" />
+ <td th:text="${currentComputer.numOfCores}" />
+ <td th:text="${currentComputer.memory}" />
+ <td th:text="${currentComputer.employee.firstName}" />
+ <td th:text="${currentComputer.employee.lastName}" />
+ <td><a
+th:href="@{/edit/{id}(id=${currentComputer.id})}">Edit</a></td>
+ <td><a
+th:href="@{/delete/{id}(id=${currentComputer.id})}">Delete</a></td>
+</tr>
+</table>
+</form>
+<a href="../inputComputer">Add a new computer</a>
+</body>
+</html>

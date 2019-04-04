@@ -1,0 +1,19 @@
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta charset="UTF-8">
+<title>Insert New Contact</title>
+</head>
+<body>
+<form name='f' th:object="${newComputer}" th:action="@{/inputComputer}"
+method='POST'>
+Name: <input name="name" size="20"> <br />
+Inventory ID: <input name="inventoryID" size="10"><br />
+Employee First Name: <input name="employee.firstName" size="20"><br />
+Employee Last Name: <input name="employee.lastName" size="20"><br />
+Number of Cores: <input name="numOfCores" size="20"><br />
+Memory in GBs:<input name="memory" size="20"><br />
+<input name="submit" type="submit" value="submit" />
+</form>
+<a href="viewAll">View all Computers</a>
+</body>
+</html>
